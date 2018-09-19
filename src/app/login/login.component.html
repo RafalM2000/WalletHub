@@ -2,6 +2,6 @@
     <div class="form-group">
       <input type='text' placeholder = 'your login'  class="form-control" [formControl] = 'login'>
       <input type='password' placeholder = 'enter your password'  class="form-control" [formControl] = 'password'>
-      <button type="submit" class="btn btn-primary">Submit</button>
+      <button type="submit" class="btn btn-primary" (click) = 'checkTheUser()' >Submit</button>
     </div>
 </form>

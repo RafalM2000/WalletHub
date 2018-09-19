@@ -17,7 +17,8 @@ const appRoutes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'one', component: OneComponent},
   { path: 'two', component: TwoComponent},
-  { path: '', component: LoginComponent}
+  { path: '', redirectTo: '/login', pathMatch: 'full'},
+  { path: '**', redirectTo: '/login', pathMatch: 'full'}
 ]
 
 

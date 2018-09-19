@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router'
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  constructor() { }
+  constructor(private _router: Router) { }
 
   setLogin(data): void {
     localStorage.setItem('loginUser', data);
@@ -17,5 +19,7 @@ export class UserService {
     console.log(localStorage.getItem('passwordUser'))
    }
 
-
+   userAuthentication() {
+     this._router.navigate(["/home"])
+   }
 }
