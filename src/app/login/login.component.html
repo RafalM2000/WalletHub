@@ -1,7 +1,9 @@
-<form>
+<form [formGroup]="formModel" (ngSubmit) = "onSubmit()">
+  <div formGroupName="user">
     <div class="form-group">
-      <input type='text' placeholder = 'your login'  class="form-control" [formControl] = 'login'>
-      <input type='password' placeholder = 'enter your password'  class="form-control" [formControl] = 'password'>
-      <button type="submit" class="btn btn-primary" (click) = 'checkTheUser()' >Submit</button>
+      <input type='text' placeholder = 'your login'  class="form-control" formControlName = 'login'>
+      <input type='password' placeholder = 'enter your password'  class="form-control" formControlName = 'password'>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
+  </div>
 </form>

@@ -6,21 +6,25 @@ import { Router } from '@angular/router'
   providedIn: 'root'
 })
 export class UserService {
+  
+  userLogin: string = 'Jon';
+  userPassword: string= "Doe";
 
   constructor(private _router: Router) { }
 
-  setLogin(data): void {
-    localStorage.setItem('loginUser', data);
-    console.log(localStorage.getItem('loginUser'))
+  authentication(data) { 
+     console.log(data.user.login)
+    if (data.user.login === this.userLogin && data.user.password === this.userPassword) {
+      localStorage.setItem('login', 'Jon')
+      localStorage.setItem('IsUsereAuthorised', 'Yes');
+      this._router.navigate(["/home"]);
+    }
   }
 
-  setPassword(data): void {
-    localStorage.setItem('passwordUser', data);
-    console.log(localStorage.getItem('passwordUser'))
-   }
-
-   userAuthentication() {
-     //there is no logic to verify login and password - was not between tasks
-     this._router.navigate(["/home"])
-   }
+  checkAuthentication() {
+    if (!localStorage.getItem || localStorage.getItem('IsUsereAuthorised') != "Yes") {
+      this._router.navigate(["/login"]);
+    }
+  }
 }
+

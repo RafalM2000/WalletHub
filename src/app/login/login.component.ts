@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl } from '@angular/forms';
-import { debounceTime } from 'rxjs/operators';
+import { FormControl, FormGroup } from '@angular/forms';
 
 import { UserService } from '../user.service'
 
@@ -10,31 +9,22 @@ import { UserService } from '../user.service'
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
-  
-  login: FormControl = new FormControl('');
-  password: FormControl = new FormControl('');
 
-  constructor(private _user: UserService) {
+  formModel: FormGroup = new FormGroup({
+    user: new FormGroup({
+      login: new FormControl(''),
+      password: new FormControl('')
+    })
+  })
 
-    this.login.valueChanges
-    .pipe(debounceTime(100))
-    .subscribe(data => {
-      this._user.setLogin(data)
-    });
-
-    this.password.valueChanges
-    .pipe(debounceTime(100))
-    .subscribe(data => {
-      this._user.setPassword(data)}
-    );
-
-   }
+  constructor(private _user: UserService) {}
 
   ngOnInit() {
   }
 
-  checkTheUser() {
-    this._user.userAuthentication();
+  onSubmit() {
+    this._user.authentication(this.formModel.value);
+
   }
 
 }
