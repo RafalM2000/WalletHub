@@ -17,13 +17,13 @@ export class LoginComponent implements OnInit {
   constructor(private _user: UserService) {
 
     this.login.valueChanges
-    .pipe(debounceTime(500))
+    .pipe(debounceTime(100))
     .subscribe(data => {
       this._user.setLogin(data)
     });
 
     this.password.valueChanges
-    .pipe(debounceTime(500))
+    .pipe(debounceTime(100))
     .subscribe(data => {
       this._user.setPassword(data)}
     );

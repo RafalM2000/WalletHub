@@ -8,10 +8,14 @@ export class UserService {
   constructor() { }
 
   setLogin(data): void {
-    console.log('login: ',data)  }
+    localStorage.setItem('loginUser', data);
+    console.log(localStorage.getItem('loginUser'))
+  }
 
   setPassword(data): void {
-    console.log('password:', data)  }
+    localStorage.setItem('passwordUser', data);
+    console.log(localStorage.getItem('passwordUser'))
+   }
 
 
 }
