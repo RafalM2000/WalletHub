@@ -6,4 +6,12 @@ import { Injectable } from '@angular/core';
 export class UserService {
 
   constructor() { }
+
+  setLogin(data): void {
+    console.log('login: ',data)  }
+
+  setPassword(data): void {
+    console.log('password:', data)  }
+
+
 }
