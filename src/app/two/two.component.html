@@ -6,7 +6,7 @@
         <input [(ngModel)]="price" class="form-control">
     </label>
     <h5  @fade>
-        The service cost: <span>{{price}}</span>
+        The service cost: <span>{{price | currency: "USD"}}</span>
     </h5>
 </div>
 
