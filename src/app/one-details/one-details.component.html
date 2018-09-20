@@ -9,15 +9,15 @@
     <ng-content></ng-content>
   </p>
   <legend>
-      <span>Please enter your mail adress: </span><input class="form-control"  type="text" #childText (keyup)= "onChange(childText.value)">
+      <span>Please enter your email adress: </span><input class="form-control"  type="text" #childText (keyup)= "onChange(childText.value)">
       <button class="btn btn-success" (click)="emailValidator(childText.value)">Subimt</button>
   </legend>
 
-  <p *ngIf = "errorMessage && errorMessage === 'This emial is OK'" class="alert alert-success" >
+  <p *ngIf = "errorMessage && errorMessage === 'This pattern emial is OK'" class="alert alert-success" >
     {{errorMessage}}
   </p>
 
-  <p *ngIf = "errorMessage && errorMessage === 'This email is not OK'" class="alert alert-danger" >
+  <p *ngIf = "errorMessage && errorMessage === 'This pattern email is not OK'" class="alert alert-danger" >
     {{errorMessage}}
   </p>
 

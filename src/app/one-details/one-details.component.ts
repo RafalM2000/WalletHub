@@ -25,11 +25,11 @@ export class OneDetailsComponent implements OnInit {
     if (/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(data))
     {
 
-      return this.errorMessage = "This emial is OK"
+      return this.errorMessage = "This pattern emial is OK"
     }
     else {
 
-    return this.errorMessage = "This email is not OK"
+    return this.errorMessage = "This pattern email is not OK"
     }
 
   }
