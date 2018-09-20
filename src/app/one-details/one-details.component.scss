@@ -1,11 +1,20 @@
+@keyframes fadeInInput {
+    from {top: 0; left: -320px;}
+    to {top: 0; left: 0px; }
+}
+
+
 .container {
     background-color: rgb(175, 241, 241);
     height: 350px;
 }
 
 input {
+    position: relative;
     width: 20em;
     margin-left: 10px;
+    animation-name: fadeInInput;
+    animation-duration: 5s;
 }
 
 span {
