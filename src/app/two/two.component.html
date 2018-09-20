@@ -1,5 +1,12 @@
 <app-menu></app-menu>
 
-<p>
-  two works!
-</p>
+<div class="container">
+     <label>
+        <span>Enter the price in US$</span>
+        <input [(ngModel)]="price" class="form-control">
+    </label>
+    <h5  @fade>
+        The service cost: <span>{{price}}</span>
+    </h5>
+</div>
+
