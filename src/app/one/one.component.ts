@@ -7,9 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneComponent implements OnInit {
 
+  messageFromOne: string = 'I like coding';
+  public childData: string;
+
   constructor() { }
 
   ngOnInit() {
+
   }
 
 }

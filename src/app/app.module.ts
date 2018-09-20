@@ -11,6 +11,7 @@ import { TwoComponent } from './two/two.component'
 
 import { UserService } from './user.service';
 import { HomeComponent } from './home/home.component';
+import { OneDetailsComponent } from './one-details/one-details.component';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -29,7 +30,8 @@ const appRoutes: Routes = [
     MenuComponent,
     OneComponent,
     TwoComponent,
-    HomeComponent
+    HomeComponent,
+    OneDetailsComponent
   ],
   imports: [
     BrowserModule,

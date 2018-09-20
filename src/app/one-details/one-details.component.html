@@ -1,0 +1,16 @@
+<div class="container">
+  <h4>
+    and this is nested component in component One. 
+  </h4>
+  <p>
+    The message from component one (host component) is: {{message}}
+  </p>
+  <p>
+    <ng-content></ng-content>
+  </p>
+  <legend>
+      <span>Please enter your mail adress: </span><input class="form-control"  type="text" #childText (keyup)= "onChange(childText.value)">
+  </legend>
+
+
+</div>

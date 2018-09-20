@@ -1,5 +1,8 @@
 <app-menu></app-menu>
+<div class="container">
+    <h3>This is component One</h3>
+    <p>String from nested Compponent: {{childData}} </p>
+</div>
 
-<p>
-  one works!
-</p>
+<app-one-details [message] = 'messageFromOne' (childEvent)="childData = $event" >And this is example of projection</app-one-details>
+
