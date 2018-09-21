@@ -8,9 +8,10 @@ import { EventEmitter } from '@angular/core';
 })
 export class OneDetailsComponent implements OnInit {
 
-  @Input() message: string;
+  @Input() message: boolean;
   @Output() childEvent = new EventEmitter<string>();
   errorMessage: string= '';
+  changesCounter: number = 0;
 
   constructor() { }
 
@@ -31,7 +32,10 @@ export class OneDetailsComponent implements OnInit {
 
     return this.errorMessage = "This pattern email is not OK"
     }
+  }
 
+  ngOnChanges() {
+    this.changesCounter++;
   }
 
 }

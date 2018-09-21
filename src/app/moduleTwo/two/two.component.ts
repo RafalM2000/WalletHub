@@ -1,4 +1,4 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { UserService } from '../../user.service';
 import { Router } from '@angular/router';
