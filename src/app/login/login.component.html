@@ -4,6 +4,7 @@
       <input type='text' placeholder = 'your login'  class="form-control" formControlName = 'login'>
       <input type='password' placeholder = 'enter your password'  class="form-control" formControlName = 'password'>
       <button type="submit" class="btn btn-primary">Submit</button>
+      <p *ngIf = 'messageValidatr' class="alert alert-danger">{{messageValidatr}}</p>
     </div>
   </div>
 </form>
