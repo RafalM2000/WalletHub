@@ -3,9 +3,12 @@
         <span>Enter the price in US$</span>
         <input [(ngModel)]="price" class="form-control">
     </label>
-    <h5  @fade>
+    <h4  @fade>
         The service cost: <span>{{price | currency: "USD"}}</span>
-    </h5> 
-            <button class="btn btn-primary" routerLink= '/home'>Go back to home >>></button>
+    </h4> 
+            <button class="btn btn-primary" routerLink= '/home'>Go back to home component</button>
 </div>
+
+<h5>Hello {{name}}</h5>
+<button class="btn btn-warning" (click) = "logout()">Logout</button>
 

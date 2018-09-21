@@ -1,5 +1,7 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { trigger, transition, style, animate } from '@angular/animations';
+import { UserService } from '../../user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -17,11 +19,21 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class TwoComponent implements OnInit {
+name: string = '';
 price: string;
 
-  constructor() { }
+  constructor(private _router: Router, private _user: UserService) { }
 
   ngOnInit() {
+    this._user.checkAuthentication();
+    this.name =  localStorage.getItem('login');
+  }
+  
+  logout() {
+    localStorage.setItem('login', '');
+    localStorage.setItem('IsUsereAuthorised', 'No');
+    this._router.navigate(["/login"]);
+    
   }
 
 }
