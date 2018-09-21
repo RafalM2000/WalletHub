@@ -13,7 +13,7 @@ export class UserService {
   constructor(private _router: Router) { }
 
   authentication(data) { 
-     console.log(data.user.login)
+    //  console.log(data.user.login)
     if (data.user.login === this.userLogin && data.user.password === this.userPassword) {
       localStorage.setItem('login', 'Jon')
       localStorage.setItem('IsUsereAuthorised', 'Yes');

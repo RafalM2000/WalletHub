@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
-import { TwoModule } from './moduleTwo/two.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -18,6 +19,7 @@ const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'one', component: OneComponent},
+  { path: 'two', loadChildren: './moduleTwo/two.module'},
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: '**', redirectTo: '/login', pathMatch: 'full'}
 ]
@@ -30,15 +32,14 @@ const appRoutes: Routes = [
     MenuComponent,
     OneComponent,
     HomeComponent,
-    OneDetailsComponent
+    OneDetailsComponent,
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
     FormsModule,
-    TwoModule,
     RouterModule.forRoot(appRoutes),
-    // BrowserAnimationsModule
   ],
   providers: [ UserService ],
   bootstrap: [AppComponent]
