@@ -3,7 +3,13 @@
 <div class="container">
     <h3>This is component One</h3>
     <p>String from nested Compponent: {{childData}} </p>
+
+    <app-one-details [message] = 'messageFromOne' (childEvent)="childData = $event" >And this is example of content projection</app-one-details>
+    
+    <button class="btn btn-primary" routerLink= '/two'>Goto module two</button>
 </div>
 
-<app-one-details [message] = 'messageFromOne' (childEvent)="childData = $event" >And this is example of content projection</app-one-details>
+
+
+
 
