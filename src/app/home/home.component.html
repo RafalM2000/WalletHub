@@ -1,6 +1,17 @@
 <app-menu></app-menu>
 
 <div class="container">
+    <p>
+        Lorem
+    </p>
+    <div>
+        <button class = 'btn btn-success' (click) = 'show()'>{{buttonMessage}}</button>
+    </div>   
+    <p [hidden] = 'isHidden'>
+        Lerem extra
+    </p>       
     <button class="btn btn-primary" routerLink= '/two'>Goto module two</button>
 </div>
+
+
 
