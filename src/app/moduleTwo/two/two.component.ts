@@ -22,6 +22,7 @@ export class TwoComponent implements OnInit {
 name: string = '';
 price: string;
 priceIsNumber: boolean = false;
+anyThing: string;
 
   constructor(private _router: Router, private _user: UserService) { }
 
