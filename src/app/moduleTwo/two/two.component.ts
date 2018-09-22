@@ -21,6 +21,7 @@ import { Router } from '@angular/router';
 export class TwoComponent implements OnInit {
 name: string = '';
 price: string;
+priceIsNumber: boolean = false;
 
   constructor(private _router: Router, private _user: UserService) { }
 
@@ -32,8 +33,16 @@ price: string;
   logout() {
     localStorage.setItem('login', '');
     localStorage.setItem('IsUsereAuthorised', 'No');
-    this._router.navigate(["/login"]);
-    
+    this._router.navigate(["/login"]);    
   }
 
+  priceValidator(data) {
+    this.price = data;
+    if (isNaN(data)) {
+      this.priceIsNumber = false;
+    }  
+    else {
+      this.priceIsNumber = true;
+    }
+  }
 }

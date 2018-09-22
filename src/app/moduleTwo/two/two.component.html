@@ -1,10 +1,12 @@
 <div class="container">
      <label>
         <span>Enter the price in US$</span>
-        <input [(ngModel)]="price" class="form-control">
+        <input #priceText (keyup)= 'priceValidator(priceText.value)' class="form-control">
     </label>
     <h4  @fade>
-        The service cost: <span>{{price | currency: "USD"}}</span>
+        The service cost:<span *ngIf = 'price && priceIsNumber'>{{price | currency: "USD"}}</span>
+                         <span *ngIf = 'price && !priceIsNumber' 
+                         [ngStyle]="{'background-color':'red'}">This is not a number</span>
     </h4> 
             <button class="btn btn-primary" routerLink= '/home'>Go back to home component</button>
 </div>
