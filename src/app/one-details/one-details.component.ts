@@ -12,6 +12,7 @@ export class OneDetailsComponent implements OnInit {
   @Output() childEvent = new EventEmitter<string>();
   errorMessage: string= '';
   changesCounter: number = 0;
+  answer: string;
 
   constructor() { }
 
@@ -35,6 +36,13 @@ export class OneDetailsComponent implements OnInit {
   }
 
   ngOnChanges() {
+    if (this.message && this.message === true) {
+      this.answer = 'Yes'
+    } 
+    else {
+      this.answer = 'No'
+    } 
+
     this.changesCounter++;
   }
 
