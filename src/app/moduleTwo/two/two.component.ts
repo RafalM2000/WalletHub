@@ -8,15 +8,6 @@ import { Router } from '@angular/router';
   selector: 'app-two',
   templateUrl: './two.component.html',
   styleUrls: ['./two.component.scss'],
-  animations: [
-    trigger('fade', [
-      // state(),
-      transition('void => *', [
-        style({ opacity: 0}),
-        animate(9000, style({opacity: 1}))
-      ])
-    ])
-  ]
 })
 export class TwoComponent implements OnInit {
 name: string = '';

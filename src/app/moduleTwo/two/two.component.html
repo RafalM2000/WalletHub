@@ -4,7 +4,7 @@
         <span>Enter the price in US$</span>
         <input #priceText (keyup)= 'priceValidator(priceText.value)' class="form-control">
     </label>
-    <h4  @fade>
+    <h4>
         The service cost:<span *ngIf = 'price && priceIsNumber'>{{price | currency: "USD"}}</span>
                          <span *ngIf = 'price && !priceIsNumber' 
                          [ngStyle]="{'background-color':'red'}">This is not a number</span>
