@@ -10,7 +10,7 @@ import { UserService } from '../user.service';
 
 const twoRoutes: Routes = [
   { path: '', component: TwoComponent},
-]
+];
 @NgModule({
   declarations: [
     TwoComponent

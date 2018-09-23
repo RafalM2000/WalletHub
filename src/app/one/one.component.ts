@@ -7,13 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class OneComponent implements OnInit {
 
-  messageFromOne: boolean = true;
-  public childData: string;
+  messageFromOne: boolean;
+  childData: string;
 
   constructor() { }
 
   ngOnInit() {
-    setInterval(() =>{ 
+    this.messageFromOne = true;
+
+    setInterval(() => {
       this.messageFromOne = Math.random() >= 0.5;
     }, 1000);
     }

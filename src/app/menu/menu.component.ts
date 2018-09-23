@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { UserService } from '../user.service'
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-menu',
@@ -8,10 +8,11 @@ import { UserService } from '../user.service'
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent implements OnInit {
-  name: string = '';
+  name: string;
   constructor(private _router: Router, private _user: UserService) { }
 
   ngOnInit() {
+    this.name = '';
     this._user.checkAuthentication();
     this.name =  localStorage.getItem('login');
   }
@@ -19,7 +20,6 @@ export class MenuComponent implements OnInit {
   logout() {
     localStorage.setItem('login', '');
     localStorage.setItem('IsUsereAuthorised', 'No');
-    this._router.navigate(["/login"]);
-    
+    this._router.navigate(['/login']);
   }
 }

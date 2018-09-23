@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 
-import { UserService } from '../user.service'
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-login',
@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
       login: new FormControl(''),
       password: new FormControl('')
     })
-  })
+  });
 
   constructor(private _user: UserService) {}
 
@@ -24,9 +24,9 @@ export class LoginComponent implements OnInit {
   }
 
   onSubmit() {
-    let form = this.formModel.value;
-    if (form.user.login === "" || form.user.password === "") {
-      this.messageValidatr = 'Both: login and password should be filled in';
+    const form = this.formModel.value;
+    if (form.user.login === '' || form.user.password === '') {
+      this.messageValidatr = 'Login and password should be filled in';
       console.log(this.messageValidatr);
       return;
     }

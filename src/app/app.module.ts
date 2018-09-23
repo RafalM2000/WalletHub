@@ -22,7 +22,7 @@ const appRoutes: Routes = [
   { path: 'two', loadChildren: './moduleTwo/two.module'},
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: '**', redirectTo: '/login', pathMatch: 'full'}
-]
+];
 
 
 @NgModule({

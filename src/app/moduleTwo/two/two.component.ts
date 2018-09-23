@@ -10,30 +10,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./two.component.scss'],
 })
 export class TwoComponent implements OnInit {
-name: string = '';
+name: string;
 price: string;
-priceIsNumber: boolean = false;
+priceIsNumber: boolean;
 anyThing: string;
 
   constructor(private _router: Router, private _user: UserService) { }
 
   ngOnInit() {
+    this.name = '';
     this._user.checkAuthentication();
     this.name =  localStorage.getItem('login');
   }
-  
+
   logout() {
     localStorage.setItem('login', '');
     localStorage.setItem('IsUsereAuthorised', 'No');
-    this._router.navigate(["/login"]);    
+    this._router.navigate(['/login']);
   }
 
   priceValidator(data) {
     this.price = data;
     if (isNaN(data)) {
       this.priceIsNumber = false;
-    }  
-    else {
+    } else {
       this.priceIsNumber = true;
     }
   }

@@ -16,21 +16,22 @@ import { trigger, transition, style, animate } from '@angular/animations';
   ]
 })
 export class HomeComponent implements OnInit {
-  isHidden: boolean = true;
-  buttonMessage: string = 'show me more';
+  isHidden: boolean;
+  buttonMessage: string;
 
   constructor() { }
 
   ngOnInit() {
+    this.isHidden = true;
+    this.buttonMessage = 'show me more';
   }
 
   show() {
     this.isHidden = !this.isHidden;
     if (this.isHidden === true) {
-      this.buttonMessage = "show me more"
-    }
-    else {
-      this.buttonMessage = "hide below info"
+      this.buttonMessage = 'show me more';
+    } else {
+      this.buttonMessage = 'hide below info';
     }
   }
 }
