@@ -13,7 +13,6 @@ export class MenuComponent implements OnInit {
 
   ngOnInit() {
     this.name = '';
-    this._user.checkAuthentication();
     this.name =  localStorage.getItem('login');
   }
 

@@ -12,12 +12,13 @@ import { HomeComponent } from './home/home.component';
 import { OneDetailsComponent } from './one-details/one-details.component';
 
 import { UserService } from './user.service';
+import { AuthGuard } from './auth.guards';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  { path: 'home', component: HomeComponent },
-  { path: 'one', component: OneComponent},
-  { path: 'two', loadChildren: './moduleTwo/two.module'},
+  { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
+  { path: 'one', component: OneComponent, canActivate: [AuthGuard]},
+  { path: 'two', loadChildren: './moduleTwo/two.module', canActivate: [AuthGuard]},
   { path: '', redirectTo: '/login', pathMatch: 'full'},
   { path: '**', redirectTo: '/login', pathMatch: 'full'}
 ];
@@ -40,7 +41,7 @@ const appRoutes: Routes = [
     FormsModule,
     RouterModule.forRoot(appRoutes),
   ],
-  providers: [ UserService ],
+  providers: [ UserService, AuthGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

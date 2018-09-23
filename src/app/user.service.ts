@@ -16,19 +16,12 @@ export class UserService {
   }
 
   authentication(data): boolean {
-    //  console.log(data.user.login)
     if (data.user.login === this.userLogin && data.user.password === this.userPassword) {
       localStorage.setItem('login', 'Jon');
       localStorage.setItem('IsUsereAuthorised', 'Yes');
       this._router.navigate(['/home']);
     } else {
       return false;
-    }
-  }
-
-  checkAuthentication() {
-    if (!localStorage.getItem || localStorage.getItem('IsUsereAuthorised') !== 'Yes') {
-      this._router.navigate(['/login']);
     }
   }
 }

@@ -27,7 +27,6 @@ export class LoginComponent implements OnInit {
     const form = this.formModel.value;
     if (form.user.login === '' || form.user.password === '') {
       this.messageValidatr = 'Login and password should be filled in';
-      console.log(this.messageValidatr);
       return;
     }
     this._user.authentication(this.formModel.value);
