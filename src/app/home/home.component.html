@@ -1,16 +1,50 @@
 <app-menu></app-menu>
 
 <div @fade class="container">
-    <p>
-        Lorem
+    <p class = "description">
+        This application shows some Angular features, like:
+        <li>
+            usage of ngOnChanges, @Output, @Input
+        </li>
+        <li>
+            uervice
+        </li>
+        <li>
+            CSS and Angular animations
+        </li>
+        <li>
+            ng-content
+        </li>
+        <li>
+           various ways to bind properties to an template
+        </li>
+        <li>
+            ngClass, ngStyle
+        </li>
+        <li>
+            functional module, lazy loaded
+        </li>
+        <li>
+            routes, router-outlet, rout guards
+        </li>
+        <li>
+            directive and Pipes
+        </li>
+        <li>
+            forms
+        </li>
+        <li>
+            unit test
+        </li>
     </p>
     <div>
         <button class = 'btn btn-success' (click) = 'show()'>{{buttonMessage}}</button>
     </div>   
-<!-- example of CSS class added dynamically for a DOM element -->
-<p [hidden] = 'isHidden' [ngClass]="{'text-two':true}" 
-    >
-        Lerem extra
+    <p [hidden] = 'isHidden' [ngClass]="{'text-two':true}">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec elementum eget felis id malesuada. 
+            Integer bibendum ante dui. Sed ac magna tempor sapien tempus vehicula vestibulum eu mi. Suspendisse non 
+            blandit massa. Vestibulum pharetra diam ornare, sodales orci quis, convallis massa. Donec volutpat nibh sed
+             finibus interdum. Maecenas sed scelerisque lorem, fermentum suscipit nisi.
     </p>       
     <button class="btn btn-primary" routerLink= '/two'>Goto module two</button>
 </div>
