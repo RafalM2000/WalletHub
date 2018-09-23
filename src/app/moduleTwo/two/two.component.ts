@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { trigger, transition, style, animate } from '@angular/animations';
-import { UserService } from '../../user.service';
 import { Router } from '@angular/router';
 
 
@@ -13,11 +11,10 @@ export class TwoComponent implements OnInit {
 name: string;
 price: string;
 
-  constructor(private _router: Router, private _user: UserService) { }
+  constructor(private _router: Router) { }
 
   ngOnInit() {
     this.name = '';
-    this._user.checkAuthentication();
     this.name =  localStorage.getItem('login');
   }
 
