@@ -1,22 +1,12 @@
 <div class="container">
     <h3>This is functional module - module two</h3>
      <label>
-        <span>Enter the price in US$</span>
-        <input #priceText (keyup)= 'priceValidator(priceText.value)' class="form-control">
+        <span>Enter the price in US$ (it accept only numbers)</span>
+        <input class="form-control" OnlyNumber="true" [(ngModel)] = 'price' />
     </label>
     <h4>
-        The service cost:<span *ngIf = 'price && priceIsNumber'>{{price | currency: "USD"}}</span>
-                         <span *ngIf = 'price && !priceIsNumber' 
-                         [ngStyle]="{'background-color':'red'}">This is not a number</span>
+        The service cost:<span *ngIf = 'price' [ngStyle]="{'background-color':'green'}" >{{price | currency: "USD"}}</span>
     </h4> 
-       
-    <p> Below press any thing you want. It's just example of two way data binding</p>
-        <label>
-            <input [(ngModel)]='anyThing' class="form-control">
-        </label>     
-    <p>
-        {{anyThing}}
-    </p>
     <button class="btn btn-primary" routerLink= '/home'>Go back to root module</button>
 </div>
 

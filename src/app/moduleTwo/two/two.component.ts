@@ -12,8 +12,6 @@ import { Router } from '@angular/router';
 export class TwoComponent implements OnInit {
 name: string;
 price: string;
-priceIsNumber: boolean;
-anyThing: string;
 
   constructor(private _router: Router, private _user: UserService) { }
 
@@ -31,10 +29,5 @@ anyThing: string;
 
   priceValidator(data) {
     this.price = data;
-    if (isNaN(data)) {
-      this.priceIsNumber = false;
-    } else {
-      this.priceIsNumber = true;
-    }
   }
 }

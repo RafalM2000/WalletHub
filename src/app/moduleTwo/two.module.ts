@@ -5,6 +5,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 import { TwoComponent } from './two/two.component';
+import { OnlyNumberDirective } from './two/onlynumber.directive';
 
 import { UserService } from '../user.service';
 
@@ -13,7 +14,8 @@ const twoRoutes: Routes = [
 ];
 @NgModule({
   declarations: [
-    TwoComponent
+    TwoComponent,
+    OnlyNumberDirective
   ],
   imports: [
     CommonModule,
