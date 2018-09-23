@@ -2,7 +2,7 @@
     <h3>This is functional module - module two</h3>
      <label>
         <span>Enter the price in US$ (it accept only numbers)</span>
-        <input class="form-control" OnlyNumber="true" [(ngModel)] = 'price' />
+        <input class="form-control" appOnlyNumber="true" [(ngModel)] = 'price' />
     </label>
     <h4>
         The service cost:<span *ngIf = 'price' [ngStyle]="{'background-color':'green'}" >{{price | currency: "USD"}}</span>
