@@ -1,27 +1,24 @@
 # WalletHub
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.8.
+##This application shows some Angular features, like:
+    usage of ngOnChanges, @Output, @Input
 
-## Development server
+    service, dependecy injection
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+    CSS and Angular animations
 
-## Code scaffolding
+    ng-content
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    various ways to bind properties to an template
 
-## Build
+    ngClass, ngStyle
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+    functional module, lazy loaded
 
-## Running unit tests
+    routing, router-outlet, router guards
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+    directive and Pipes
 
-## Running end-to-end tests
+    reactive model forms
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+    unit tests
