@@ -1,6 +1,8 @@
 # WalletHub
 
 ##This application shows some Angular features, like:
+
+
     usage of ngOnChanges, @Output, @Input
 
     service, dependecy injection
