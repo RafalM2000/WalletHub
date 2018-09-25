@@ -27,11 +27,12 @@ export class LoginComponent implements OnInit {
     const form = this.formModel.value;
     if (form.user.login === '' || form.user.password === '') {
       this.messageValidatr = 'Login and password should be filled in';
-      return;
+      return false;
     }
     this._user.authentication(this.formModel.value);
     if (this._user.authentication(this.formModel.value) === false) {
       this.messageValidatr = 'Wrong login or password';
+      return false;
     }
 
   }

@@ -14,7 +14,7 @@ import { OneDetailsComponent } from './one-details/one-details.component';
 import { UserService } from './user.service';
 import { AuthGuard } from './auth.guards';
 
-const appRoutes: Routes = [
+export const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'home', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'one', component: OneComponent, canActivate: [AuthGuard]},

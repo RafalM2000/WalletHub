@@ -3,6 +3,20 @@
     to {top: 0; left: 0px; }
 }
 
+@-webkit-keyframes fadeInInput {
+    from {top: 0; left: -320px;}
+    to {top: 0; left: 0px; }
+}
+
+@-moz-keyframes fadeInInput {
+    from {top: 0; left: -320px;}
+    to {top: 0; left: 0px; }
+}
+
+@-o-keyframes fadeInInput {
+    from {top: 0; left: -320px;}
+    to {top: 0; left: 0px; }
+}
 
 .containerNest {
     padding-left: 30px;
@@ -16,6 +30,9 @@ input {
     width: 20em;
     margin-left: 10px;
     animation-name: fadeInInput;
+    -webkit-animation-name: fadeInInput;
+    -moz-animation-name: fadeInInput;
+    -o-animation-name: fadeInInput;
     animation-duration: 5s;
 }
 

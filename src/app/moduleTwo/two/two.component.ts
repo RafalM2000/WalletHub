@@ -25,6 +25,6 @@ price: string;
   }
 
   priceValidator(data) {
-    this.price = data;
+    return this.price = data;
   }
 }
