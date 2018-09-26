@@ -1,20 +1,32 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed, fakeAsync, tick, inject } from '@angular/core/testing';
 import {RouterTestingModule} from '@angular/router/testing';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { Location } from '@angular/common';
+import { Routes, Router } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { HomeComponent } from './home.component';
 import { MenuComponent } from '../menu/menu.component';
+import { TwoComponent } from '../moduleTwo//two/two.component';
 
 describe('HomeComponent', () => {
   let component: HomeComponent;
   let fixture: ComponentFixture<HomeComponent>;
 
   beforeEach(async(() => {
+    const routs: Routes = [
+      { path: 'two', component: TwoComponent }
+    ];
     TestBed.configureTestingModule({
-      declarations: [ HomeComponent,
-      MenuComponent ],
-      imports: [RouterTestingModule,
-      BrowserAnimationsModule]
+      declarations: [
+      HomeComponent,
+      MenuComponent,
+      TwoComponent],
+      imports: [
+      RouterTestingModule.withRoutes(routs),
+      BrowserAnimationsModule,
+      FormsModule,
+      ReactiveFormsModule ]
     })
     .compileComponents();
   }));
@@ -57,5 +69,13 @@ describe('HomeComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button.btn-success').textContent).toContain('show me more');
   }));
+
+  it('should be able to navigate to /two', fakeAsync(inject([Router, Location],
+    (router: Router, location: Location) => {
+      router.navigate(['/two']);
+      tick();
+      expect (location.path()).toBe('/two');
+    })
+  ));
 
 });

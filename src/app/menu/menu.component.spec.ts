@@ -57,7 +57,7 @@ describe('MenuComponent', () => {
     tick();
     expect (location.path()).toBe('/home');
   })
-));
+  ));
 
 it('should be able to navigate to /one', fakeAsync(inject([Router, Location],
   (router: Router, location: Location) => {
