@@ -23,4 +23,9 @@
 
     reactive model forms
 
+    have 2 input with some simple validation (like an email validation) without the require of 
+    angular-forms and ngModel
+
+    have a input directive that restrict the input to numbers only and auto formats the input into currency ex: $1.234. 
+
     unit tests
