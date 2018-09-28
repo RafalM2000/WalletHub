@@ -29,9 +29,9 @@ export class HomeComponent implements OnInit {
   show() {
     this.isHidden = !this.isHidden;
     if (this.isHidden === true) {
-      this.buttonMessage = 'show me more';
+      return this.buttonMessage = 'show me more';
     } else {
-      this.buttonMessage = 'hide below info';
+      return this.buttonMessage = 'hide below info';
     }
   }
 }

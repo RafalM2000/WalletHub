@@ -78,4 +78,8 @@ describe('HomeComponent', () => {
     })
   ));
 
+  it('function show should return string - hide below info', async(() => {
+    expect(component.show()).toBe('hide below info');
+  }));
+
 });
