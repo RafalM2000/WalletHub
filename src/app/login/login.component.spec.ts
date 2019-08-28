@@ -23,6 +23,7 @@ describe('LoginComponent', () => {
   beforeEach(() => {
     fixture = TestBed.createComponent(LoginComponent);
     component = fixture.componentInstance;
+    component.ngOnInit(); 
     fixture.detectChanges();
   });
 
@@ -38,5 +39,16 @@ describe('LoginComponent', () => {
     const compiled = fixture.debugElement.nativeElement;
     expect(compiled.querySelector('button').textContent).toContain('Submit');
   }));
+
+  it('form invalid when empty', () => {
+    let login = component.formModel.controls['login']; 
+    let password = component.formModel.controls['password']; 
+    login.setValue("test");
+    password.setValue("test");
+    // component.formModel.value.user.login = "jon";
+    // component.formModel.value.user.password = "xxx";
+    expect(login).toBe('test');
+   });
+
 
  });
